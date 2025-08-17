@@ -1,3 +1,5 @@
+# copyright 2025 © Kingmaker | https://github.com/Kingmaker-art
+
 # @title 🖥️ Main Colab Leech Code (changed)
 
 
@@ -19,6 +21,16 @@ from IPython.display import clear_output
 from threading import Thread
 
 Working = True
+
+banner = '''
+  ______   __        ____             _       
+ /_  __/  / /  ___  / __ ) ___   ____(_)____ _
+  / /    / /  / _ \\/ __  |/ _ \\ / ___/ // __ `/
+/ /    / /__/  __/ /_/ //  __// /   / // /_/ / 
+/_/    /____/\\___/_____/ \\___//_/   /_/ \\__,_/  
+                                               
+'''
+print(banner)
 
 def Loading():
     white = 37
