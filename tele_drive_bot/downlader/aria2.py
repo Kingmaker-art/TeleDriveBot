@@ -5,8 +5,8 @@ import re
 import logging
 import subprocess
 from datetime import datetime
-from colab_leecher.utility.helper import sizeUnit, status_bar
-from colab_leecher.utility.variables import BOT, Aria2c, Paths, Messages, BotTimes
+from tele_drive_bot.utility.helper import sizeUnit, status_bar
+from tele_drive_bot.utility.variables import BOT, Aria2c, Paths, Messages, BotTimes
 
 
 async def aria2_Download(link: str, num: int):
