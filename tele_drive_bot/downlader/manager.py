@@ -5,14 +5,14 @@ import logging
 from natsort import natsorted
 from datetime import datetime
 from asyncio import sleep, get_running_loop
-from colab_leecher.downlader.mega import megadl
-from colab_leecher.utility.handler import cancelTask
-from colab_leecher.downlader.terabox import terabox_download
-from colab_leecher.downlader.ytdl import YTDL_Status, get_YT_Name
+from tele_drive_bot.downlader.mega import megadl
+from tele_drive_bot.utility.handler import cancelTask
+from tele_drive_bot.downlader.terabox import terabox_download
+from tele_drive_bot.downlader.ytdl import YTDL_Status, get_YT_Name
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
-from colab_leecher.downlader.aria2 import aria2_Download, get_Aria2c_Name
-from colab_leecher.downlader.telegram import TelegramDownload, media_Identifier
-from colab_leecher.utility.variables import (
+from tele_drive_bot.downlader.aria2 import aria2_Download, get_Aria2c_Name
+from tele_drive_bot.downlader.telegram import TelegramDownload, media_Identifier
+from tele_drive_bot.utility.variables import (
     BOT,
     Gdrive,
     Transfer,
@@ -21,7 +21,7 @@ from colab_leecher.utility.variables import (
     Aria2c,
     BotTimes,
 )
-from colab_leecher.utility.helper import (
+from tele_drive_bot.utility.helper import (
     isYtdlComplete,
     keyboard,
     sysINFO,
@@ -31,7 +31,7 @@ from colab_leecher.utility.helper import (
     is_ytdl_link,
     is_telegram,
 )
-from colab_leecher.downlader.gdrive import (
+from tele_drive_bot.downlader.gdrive import (
     build_service,
     g_DownLoad,
     get_Gfolder_size,
