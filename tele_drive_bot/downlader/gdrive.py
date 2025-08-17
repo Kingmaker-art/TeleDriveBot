@@ -11,9 +11,9 @@ from urllib.parse import parse_qs, urlparse
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaIoBaseDownload
-from colab_leecher.utility.handler import cancelTask
-from colab_leecher.utility.helper import sizeUnit, getTime, speedETA, status_bar
-from colab_leecher.utility.variables import Gdrive, Messages, Paths, BotTimes, Transfer
+from tele_drive_bot.utility.handler import cancelTask
+from tele_drive_bot.utility.helper import sizeUnit, getTime, speedETA, status_bar
+from tele_drive_bot.utility.variables import Gdrive, Messages, Paths, BotTimes, Transfer
 
 
 async def build_service():
