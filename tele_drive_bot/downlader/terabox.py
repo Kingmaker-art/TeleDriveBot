@@ -2,9 +2,9 @@
 
 import aiohttp
 import logging
-from colab_leecher.utility.variables import Aria2c
-from colab_leecher.utility.handler import cancelTask
-from colab_leecher.downlader.aria2 import aria2_Download
+from tele_drive_bot.utility.variables import Aria2c
+from tele_drive_bot.utility.handler import cancelTask
+from tele_drive_bot.downlader.aria2 import aria2_Download
 
 
 async def terabox_download(link: str, index):
