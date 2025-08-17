@@ -1,8 +1,8 @@
 
 import subprocess, logging
 from datetime import datetime
-from colab_leecher.utility.helper import status_bar, getTime
-from colab_leecher.utility.variables import BotTimes, Messages, Paths
+from tele_drive_bot.utility.helper import status_bar, getTime
+from tele_drive_bot.utility.variables import BotTimes, Messages, Paths
 from pymegatools import Megatools, MegaError
 
 async def megadl(link: str, num: int):
