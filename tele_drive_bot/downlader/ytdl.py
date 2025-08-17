@@ -4,9 +4,9 @@ import yt_dlp
 from asyncio import sleep
 from threading import Thread
 from os import makedirs, path as ospath
-from colab_leecher.utility.handler import cancelTask
-from colab_leecher.utility.variables import YTDL, MSG, Messages, Paths
-from colab_leecher.utility.helper import getTime, keyboard, sizeUnit, status_bar, sysINFO
+from tele_drive_bot.utility.handler import cancelTask
+from tele_drive_bot.utility.variables import YTDL, MSG, Messages, Paths
+from tele_drive_bot.utility.helper import getTime, keyboard, sizeUnit, status_bar, sysINFO
 
 
 async def YTDL_Status(link, num):
