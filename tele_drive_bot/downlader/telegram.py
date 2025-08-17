@@ -2,10 +2,10 @@
 import logging
 from datetime import datetime
 from os import path as ospath
-from colab_leecher import colab_bot
-from colab_leecher.utility.handler import cancelTask
-from colab_leecher.utility.variables import Transfer, Paths, Messages, BotTimes
-from colab_leecher.utility.helper import speedETA, getTime, sizeUnit, status_bar
+from tele_drive_bot import colab_bot
+from tele_drive_bot.utility.handler import cancelTask
+from tele_drive_bot.utility.variables import Transfer, Paths, Messages, BotTimes
+from tele_drive_bot.utility.helper import speedETA, getTime, sizeUnit, status_bar
 
 
 async def media_Identifier(link):
