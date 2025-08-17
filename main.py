@@ -73,8 +73,8 @@ with open('/content/TeleDriveBot/credentials.json', 'w') as file:
 
 Working = False
 
-if os.path.exists("/content/TeleDriveBot/my_bot.session"):
-    os.remove("/content/TeleDriveBot/my_bot.session") # Remove previous bot session
+if os.path.exists("/content/TeleDriveBot/tg_drivebot.session"):
+    os.remove("/content/TeleDriveBot/tg_drivebot.session") # Remove previous bot session
     
 print("\rStarting Bot....")
 
