@@ -27,7 +27,7 @@ async def start(client, message):
                     "Repository 🦄",
                     url="https://github.com/Kingmaker-art/TeleDriveBot",
                 ),
-                InlineKeyboardButton("Support 💝", url="https://t.me/TeleDriveBotSupport"),
+                InlineKeyboardButton("Support 💝", url="https://t.me/Direct2DriveBotSupport."),
             ],
         ]
     )
@@ -440,11 +440,11 @@ async def help_command(client, message):
                 [
                     InlineKeyboardButton(  # Opens a web URL
                         "Channel 📣",
-                        url="https://t.me/TeleDriveBot",
+                        url="https://t.me/Direct2DriveBot",
                     ),
                     InlineKeyboardButton(  # Opens a web URL
                         "Group 💬",
-                        url="https://t.me/TeleDriveBotDiscuss",
+                        url="https://t.me/Direct2DriveBotDiscuss",
                     ),
                 ],
             ]
