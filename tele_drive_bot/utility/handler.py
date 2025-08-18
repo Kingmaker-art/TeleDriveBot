@@ -213,11 +213,11 @@ async def cancelTask(Reason: str):
                         [
                             InlineKeyboardButton(  # Opens a web URL
                                 "Channel 📣",
-                                url="https://t.me/TeleDriveBot",
+                                url="https://t.me/Direct2DriveBot",
                             ),
                             InlineKeyboardButton(  # Opens a web URL
                                 "Group 💬",
-                                url="https://t.me/TeleDriveBot_Discuss",
+                                url="https://t.me/Direct2DriveBotDiscuss",
                             ),
                         ],
                     ]
@@ -268,11 +268,11 @@ async def SendLogs(is_leech: bool):
                     [
                         InlineKeyboardButton(  # Opens a web URL
                             "Channel 📣",
-                            url="https://t.me/TeleDriveBot",
+                            url="https://t.me/Direct2DriveBot",
                         ),
                         InlineKeyboardButton(  # Opens a web URL
                             "Group 💬",
-                            url="https://t.me/TeleDriveBot_Discuss",
+                            url="https://t.me/Direct2DriveBotDiscuss",
                         ),
                     ],
                 ]
@@ -301,7 +301,7 @@ async def SendLogs(is_leech: bool):
                     MSG.status_msg = await MSG.status_msg.reply_text(text=fn_txt)
             except Exception as e:
                 Err = f"<b>Error Sending logs » </b><i>{e}</i>"
-                Err += f"\n\n<i>⚠️ If You are Unknown with this **ERROR**, Then Forward This Message in [TeleDrive Discussion](https://t.me/TeleDriveBot_Discuss) Where [abc](https://t.me/abc) may fix it</i>"
+                Err += f"\n\n<i>⚠️ If You are Unknown with this **ERROR**, Then Forward This Message in [TeleDrive Discussion](https://t.me/Direct2DriveBotDiscuss) Where [abc](https://t.me/abc) may fix it</i>"
                 await MSG.status_msg.reply_text(text=Err)
 
     BOT.State.started = False
