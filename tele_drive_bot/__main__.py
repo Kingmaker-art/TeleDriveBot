@@ -423,6 +423,51 @@ async def unzip_pswd(client, message):
     await sleep(15)
     await message_deleter(message, msg)
 
+/////////////////////////////////////////////////////////////////////////////////////
+from pyrogram import Client, filters
+import os
+from utility.videoConverter import videoConverter  # adjust path if needed
+
+DOWNLOAD_DIR = "/content/TeleDriveBot/downloads/"
+
+@colab_bot.on_message(filters.command("convert") & filters.reply)
+async def convert_video(client, message):
+    # Must reply to a video or document
+    if not message.reply_to_message or not (message.reply_to_message.video or message.reply_to_message.document):
+        await message.reply("⚠️ Please reply to a video/file with /convert")
+        return
+
+    msg = await message.reply("⬇️ Downloading file...")
+
+    # Download file
+    downloaded = await message.reply_to_message.download(file_name=DOWNLOAD_DIR)
+    await msg.edit("✅ Downloaded! Now converting...")
+
+    # Output path (change extension to .mkv for conversion)
+    output_path = os.path.splitext(downloaded)[0] + "_converted.mkv"
+
+    try:
+        # Convert
+        videoConverter(downloaded, output_path)  # call your function
+        await msg.edit("✅ Conversion done! Uploading...")
+
+        # Re-upload to Telegram
+        await client.send_document(
+            chat_id=message.chat.id,
+            document=output_path,
+            caption="Here’s your converted video 🎬"
+        )
+
+        await msg.delete()
+
+    except Exception as e:
+        await msg.edit(f"❌ Conversion failed: {e}")
+
+    finally:
+        # Cleanup temp files
+        for f in [downloaded, output_path]:
+            if os.path.exists(f):
+                os.remove(f)
 
 @colab_bot.on_message(filters.command("help") & filters.private)
 async def help_command(client, message):
