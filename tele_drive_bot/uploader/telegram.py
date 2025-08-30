@@ -8,8 +8,9 @@ from os import path as ospath
 from datetime import datetime
 from pyrogram.errors import FloodWait
 from tele_drive_bot.utility.variables import BOT, Transfer, BotTimes, Messages, MSG, Paths
-from tele_drive_bot.utility.variables import GROUP_ID, THREAD_ID, DUMP_ID, BOT
+from tele_drive_bot import DUMP_ID, GROUP_ID, THREAD_ID, colab_bot
 from tele_drive_bot.utility.helper import sizeUnit, fileType, getTime, status_bar, thumbMaintainer, videoExtFix
+
 
 async def progress_bar(current, total):
     global status_msg, status_head
@@ -94,12 +95,11 @@ async def upload_file(file_path, real_name):
                 progress=progress_bar,
                 reply_to_message_id=MSG.sent_msg.id,
             )
-
-        
+ # ---------------- Copy to Group Thread ----------------
         try:
             await BOT.copy_message(
-                chat_id=GROUP_ID,
-                from_chat_id=DUMP_ID,
+                chat_id=GROUP_ID,          # target group ID
+                from_chat_id=DUMP_ID,      # dump channel ID
                 message_id=MSG.sent_msg.id,
                 message_thread_id=THREAD_ID
             )
@@ -109,18 +109,7 @@ async def upload_file(file_path, real_name):
 
         Transfer.sent_file.append(MSG.sent_msg)
         Transfer.sent_file_names.append(real_name)
-
- try:
-            await MSG.sent_msg._client.copy_message(
-                chat_id=-1002971806624,                 # <- put your group ID here
-                from_chat_id=MSG.sent_msg.chat.id,
-                message_id=MSG.sent_msg.id
-                message_thread_id=2
-            )
-        except Exception as e:
-            logging.error(f"Error copying to group: {e}")
-
-
+ 
     except FloodWait as e:
         logging.warning(f"FloodWait: Waiting {e.value} Seconds Before Trying Again.")
         await sleep(e.value)  # Wait dynamic FloodWait seconds before Trying Again
