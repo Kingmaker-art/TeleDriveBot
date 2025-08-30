@@ -8,7 +8,6 @@ from os import path as ospath
 from datetime import datetime
 from pyrogram.errors import FloodWait
 from tele_drive_bot.utility.variables import BOT, Transfer, BotTimes, Messages, MSG, Paths
-from tele_drive_bot import DUMP_ID, GROUP_ID, THREAD_ID, colab_bot
 from tele_drive_bot.utility.helper import sizeUnit, fileType, getTime, status_bar, thumbMaintainer, videoExtFix
 
 
@@ -95,18 +94,7 @@ async def upload_file(file_path, real_name):
                 progress=progress_bar,
                 reply_to_message_id=MSG.sent_msg.id,
             )
- # ---------------- Copy to Group Thread ----------------
-        try:
-            await BOT.copy_message(
-                chat_id=GROUP_ID,          # target group ID
-                from_chat_id=DUMP_ID,      # dump channel ID
-                message_id=MSG.sent_msg.id,
-                message_thread_id=THREAD_ID
-            )
-            logging.info("File copied to group thread successfully ✅")
-        except Exception as e:
-            logging.error(f"Failed to copy file to group thread: {e}")
-
+ 
         Transfer.sent_file.append(MSG.sent_msg)
         Transfer.sent_file_names.append(real_name)
  
