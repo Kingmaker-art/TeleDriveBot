@@ -14,8 +14,6 @@ API_HASH = ""  # @param {type: "string"}
 BOT_TOKEN = ""  # @param {type: "string"}
 USER_ID = 0  # @param {type: "integer"}
 DUMP_ID = 0  # @param {type: "integer"}
-GROUP_ID = 0 # @param {type: "integer"}
-THREAD_ID = 0 # @param {type: "integer"}
 
 
 import subprocess, time, json, shutil, os
@@ -68,9 +66,7 @@ credentials = {
     "BOT_TOKEN": BOT_TOKEN,
     "USER_ID": USER_ID,
     "DUMP_ID": DUMP_ID,
-    "GROUP_ID": GROUP_ID,
-    "THREAD_ID": THREAD_ID,
-}
+   }
 
 with open('/content/TeleDriveBot/credentials.json', 'w') as file:
     file.write(json.dumps(credentials))
