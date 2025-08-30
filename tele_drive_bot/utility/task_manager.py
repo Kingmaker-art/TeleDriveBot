@@ -6,6 +6,7 @@ from time import time
 from datetime import datetime
 from asyncio import sleep
 from os import makedirs, path as ospath, system
+from tele_drive_bot import OWNER, colab_bot, DUMP_ID
 from tele_drive_bot.downlader.manager import calDownSize, get_d_name, downloadManager
 from tele_drive_bot.utility.helper import (
     getSize,
