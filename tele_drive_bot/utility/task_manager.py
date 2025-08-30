@@ -6,7 +6,7 @@ from time import time
 from datetime import datetime
 from asyncio import sleep
 from os import makedirs, path as ospath, system
-from tele_drive_bot import OWNER, colab_bot, DUMP_ID
+from tele_drive_bot import OWNER, colab_bot, DUMP_ID, GROUP_ID, THREAD_ID
 from tele_drive_bot.downlader.manager import calDownSize, get_d_name, downloadManager
 from tele_drive_bot.utility.helper import (
     getSize,
@@ -136,10 +136,11 @@ async def taskScheduler():
         Paths.HERO_IMAGE = Paths.DEFAULT_HERO
 
     MSG.sent_msg = await colab_bot.send_message(chat_id=DUMP_ID, text=src_text[0])
-
+    MSG.group_msg = await colab_bot.send_message(chat_id=GROUP_ID, text=src_text[0], message_thread_id=THREAD_ID)
     if len(src_text) > 1:
         for lin in range(1, len(src_text)):
             MSG.sent_msg = await MSG.sent_msg.reply_text(text=src_text[lin], quote=True)
+            MSG.group_msg = await MSG.group_msg.reply_text(text=src_text[lin], quote=True)
 
     Messages.src_link = f"https://t.me/c/{Messages.link_p}/{MSG.sent_msg.id}"
     Messages.task_msg += f"__[{BOT.Mode.type.capitalize()} {BOT.Mode.mode.capitalize()} as {BOT.Setting.stream_upload}]({Messages.src_link})__\n\n"
