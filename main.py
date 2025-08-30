@@ -66,7 +66,7 @@ credentials = {
     "BOT_TOKEN": BOT_TOKEN,
     "USER_ID": USER_ID,
     "DUMP_ID": DUMP_ID,
-   }
+}
 
 with open('/content/TeleDriveBot/credentials.json', 'w') as file:
     file.write(json.dumps(credentials))
