@@ -135,7 +135,7 @@ async def taskScheduler():
         Paths.HERO_IMAGE = Paths.DEFAULT_HERO
 
     MSG.sent_msg = await colab_bot.send_message(chat_id=DUMP_ID, text=src_text[0])
-      if len(src_text) > 1:
+    if len(src_text) > 1:
         for lin in range(1, len(src_text)):
             MSG.sent_msg = await MSG.sent_msg.reply_text(text=src_text[lin], quote=True)
            
