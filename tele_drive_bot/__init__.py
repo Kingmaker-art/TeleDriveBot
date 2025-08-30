@@ -13,7 +13,8 @@ API_HASH = credentials["API_HASH"]
 BOT_TOKEN = credentials["BOT_TOKEN"]
 OWNER = credentials["USER_ID"]
 DUMP_ID = credentials["DUMP_ID"]
-
+GROUP_ID = credentials["GROUP_ID"]
+THREAD_ID = credentials["THREAD_ID"]
 
 logging.basicConfig(level=logging.INFO)
 
