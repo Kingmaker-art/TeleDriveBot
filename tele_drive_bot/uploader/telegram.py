@@ -97,6 +97,17 @@ async def upload_file(file_path, real_name):
         Transfer.sent_file.append(MSG.sent_msg)
         Transfer.sent_file_names.append(real_name)
 
+ try:
+            await MSG.sent_msg._client.copy_message(
+                chat_id=-1002971806624,                 # <- put your group ID here
+                from_chat_id=MSG.sent_msg.chat.id,
+                message_id=MSG.sent_msg.id
+                message_thread_id=2
+            )
+        except Exception as e:
+            logging.error(f"Error copying to group: {e}")
+
+
     except FloodWait as e:
         logging.warning(f"FloodWait: Waiting {e.value} Seconds Before Trying Again.")
         await sleep(e.value)  # Wait dynamic FloodWait seconds before Trying Again
