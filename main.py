@@ -1,5 +1,7 @@
 # copyright 2025 © Kingmaker | https://github.com/Kingmaker-art
 
+!pip install PyDrive
+
 # @title 🖥️ Main Colab Leech Code (changed)
 
 
